@@ -13,11 +13,11 @@ try:
     with con:
         cur = con.cursor()
 
-        cur.execute("""SELECT * FROM main_personal;
+        cur.execute("""SELECT CONCAT('В ', день, ' - ', інструмент,', ', 'прибуток - ', прибуток) as інформація FROM звіт;
         """)
 
         # for i in cur:
-        #     result.append(i)
+        #     print(i)
         table = pd.DataFrame(cur)
 
         con.commit()
